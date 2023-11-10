@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(90deg ,#4fffd9, white, #4fffd9);
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+section{
+    height: 100vh;
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+input{
+    display:none
+}
+
+label{
+    background: #3cff00;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-weight: 700;
+    color: white;
+    position:absolute;
+    top:40vh;
+    cursor: pointer;    
+}
+
+
+.container{
+    width: 100px;
+    height: 100px;
+    margin-right: 70% ;
+    margin-top: 32%;
+    display:none;
+}
+
+.container > img {
+    width: inherit;
+    height: inherit;
+    animation-name: Mario;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-duration: 5s;
+}
+
+@keyframes Mario{
+    0%{
+        transform: translateX(0px)
+    }
+    100%{
+        transform: translateX(101vw);
+    }
+}
+
+#pequemario{
+    filter: drop-shadow(0 0 10px black) ;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    margin-right: 70% ;
+    margin-top: 32%;
+}
+
+#grass{
+    height: 62px;
+    width: 100%;
+    background: linear-gradient( greenyellow,rgb(79, 119,49));
+    position:absolute;
+    bottom: 0px;
+    border-top: 2px dashed black;
+}
+
+#clouds{
+    position: absolute;
+    z-index: -10;
+    overflow: hidden;
+    width: 70%;
+}
+
+#btn:checked ~ label{
+    background-color: orangered;
+    color: black;
+    animation: pepe;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes pepe{
+    0%{
+        transform: translateY(0px);
+        background-color: orangered;
+    }
+    50%{
+        transform: translateY(10px);
+        background-color: red;
+    }
+    100%{
+        transform: translateY(0px);
+        background-color: steelblue;
+    }
+}
+
+#btn:checked ~ #pequemario{
+    display: none;
+}
+#btn:checked ~ div{
+    display: inline-block;
+}
